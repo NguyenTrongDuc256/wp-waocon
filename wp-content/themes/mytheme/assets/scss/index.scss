@@ -1,10 +1,10 @@
 @charset "UTF-8";
 
 
-@custom-media --sm screen and (min-width: 544px);
-@custom-media --md screen and (min-width: 768px);
-@custom-media --lg screen and (min-width: 992px);
-@custom-media --xl screen and (min-width: 1200px);
+//@custom-media --sm screen and (min-width: 544px);
+//@custom-media --md screen and (min-width: 768px);
+//@custom-media --lg screen and (min-width: 992px);
+//@custom-media --xl screen and (min-width: 1200px);
 /*
 @mixin is-lg-small() {
   @media screen and (max-width: $breakpoint-tablet) {
@@ -3552,7 +3552,7 @@ body[data-status="loaded"] .js-loading {
 .case-archive__headline .c-vertical-text {
   text-align: right;
   transform-origin: center center;
-  -ms-writing-mode: horizontal-tb;
+  //-ms-writing-mode: horizontal-tb;
   writing-mode: horizontal-tb;
 }
 
@@ -4382,7 +4382,7 @@ body[data-status="loaded"] .js-loading {
   height: 16px;
   -webkit-appearance: radio;
   -moz-appearance: radio;
-  appearance: radio;
+  //appearance: radio;
 }
 
 @media screen and (max-width: 1024px) {
