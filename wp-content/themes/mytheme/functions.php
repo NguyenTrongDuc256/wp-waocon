@@ -11,6 +11,11 @@ if (!defined('_S_VERSION')) {
     // Replace the version number of the theme on each release.
     define('_S_VERSION', '1.0.0');
 }
+if (!defined('_S_TEXTDOMAIN')) {
+
+    define('_S_TEXTDOMAIN', 'mywebwaocon');
+
+}
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -215,71 +220,40 @@ add_filter('get_custom_logo', 'change_logo_class');
 register_nav_menus(
     array(
         'headerMenu' => esc_html__('Menu home', 'default'),
+        'footerMenu' => esc_html__('Menu footer', 'default'),
     )
 
 );
 
-//Tạo ra thêm setting nhập dữ liệu
-
-function add_admin_menu()
-{
-    add_menu_page(
-        'Plugin Options',
-        'Plugin Options',
-        'manage_options',
-        'plugin-options',
-        'show_plugin_options',
-        '',
-        99
-    );
-}
-add_action('admin_menu', 'add_admin_menu');
-function show_plugin_options()
-{
-    ?>
-    <div class="wrap">
-        <h1><?php echo esc_html( get_admin_page_title() ); ?></h1>
-        <form method="post" action="options.php">
-            <?php settings_fields( 'my-custom-options-group' ); ?>
-            <?php do_settings_sections( 'my-custom-options-group' ); ?>
-            <table class="form-table">
-                <tr valign="top">
-                    <th scope="row">Link</th>
-                    <td><input type="text" name="my_text_input" value="<?php echo esc_attr( get_option( 'my_text_input' ) ); ?>" /></td>
-                </tr>
-                <tr valign="top">
-                    <th scope="row">Checkbox</th>
-                    <td><input type="checkbox" name="my_checkbox" <?php checked( get_option( 'my_checkbox' ), 'on' ); ?> /></td>
-                </tr>
-            </table>
-            <?php submit_button(); ?>
-        </form>
-    </div>
-    <?php
-}
-function my_custom_options_init() {
-    register_setting(
-        'my-custom-options-group',
-        'my_text_input'
-    );
-    register_setting(
-        'my-custom-options-group',
-        'my_checkbox'
-    );
-}
-add_action( 'admin_init', 'my_custom_options_init' );
-function my_custom_options_save() {
-    if ( isset( $_POST['my_text_input'] ) ) {
-        update_option( 'my_text_input', sanitize_text_field( $_POST['my_text_input'] ) );
-    }
-    if ( isset( $_POST['my_checkbox'] ) ) {
-        update_option( 'my_checkbox', 'on' );
-    } else {
-        delete_option( 'my_checkbox' );
-    }
-}
-add_action( 'admin_init', 'my_custom_options_save' );
 
 // home
 include_once get_template_directory() . '/vc-elements/banner/banner-home.php';
+include_once get_template_directory() . '/vc-elements/abouts/about-home.php';
+include_once get_template_directory() . '/vc-elements/cases/case-home.php';
+include_once get_template_directory() . '/vc-elements/contents/content-home.php';
+include_once get_template_directory() . '/vc-elements/blogs/blog-home.php';
+include_once get_template_directory() . '/vc-elements/information/info-home.php';
+include_once get_template_directory() . '/vc-elements/contacts/contact-home.php';
 
+//Tajo ra thêm setting nhập dữ liệu
+if (function_exists('acf_add_options_page')) {
+    acf_add_options_page(array(
+        'page_title' => 'Theme General Settings',
+        'menu_title' => 'Theme Settings',
+        'menu_slug' => 'theme-general-settings',
+        'capability' => 'edit_posts',
+        'redirect' => false
+    ));
+
+}
+
+function wpn_add_options_page()
+{
+    if (function_exists('acf_add_options_page')) {
+        acf_add_options_page(array('page_title' => 'Theme Settings', 'menu_title' => 'Theme Settings', 'menu_slug' => 'theme-general-settings', 'capability' => 'edit_posts', 'redirect' => false));
+    }
+}
+
+add_action('init', 'wpn_add_options_page');
+
+////---------------------------------------------------------------------

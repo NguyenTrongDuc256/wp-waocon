@@ -1,27 +1,35 @@
 <?php
 
-add_action('vc_before_init', 'infor_home');
+add_action('vc_before_init', 'info_home');
 // if(!function_exists('')){
 
 // }
-function infor_home()
+function info_home()
 {
     vc_map(
         array(
-            "name" => "About Home",
-            "base" => "vc_latest_infor_home",
+            "name" => "Information Home",
+            "base" => "vc_latest_info_home",
             "category" => 'Content',
             "allowed_container_element" => 'vc_row',
             'params' => array(
                 array(
                     "type" => "textfield",
                     "heading" => "Title",
-                    "param_name" => "title_infor",
+                    "param_name" => "title_info",
                     "description" => __( "Main title.", "textdomain" )
                 ),
                 array(
+                    "type" => "textarea",
+                    "class" => "",
+                    "heading" => __( "Description", "textdomain" ),
+                    "param_name" => "detail_info",
+                    "value" => __( "", "my-text-domain" ),
+                    "description" => __( "Enter description.", "textdomain" )
+                ),
+                array(
                     "type" => "textarea_html",
-                    "heading" => "Content infor",
+                    "heading" => "Map iFrame",
                     "param_name" => "content",
                     "description" => __( "About Content.", "textdomain" )
                 ),
@@ -39,24 +47,23 @@ function infor_home()
 }
 
 
-function vc_latest_infor_home_render($atts, $content)
+function vc_latest_info_home_render($atts, $content)
 {
     $args = array(
-        'title_infor' => '',
-        'title_infor_jpn' => '',
+        'title_info' => '',
+        'detail_info' => '',
         'content' => '',
         'url' => '',
-        'arr_img' => 'arr_img',
     );
     $atts['content'] = $content;
 
     $params = shortcode_atts($args, $atts);
     ob_start();
-    get_template_part('template-parts/content/home/home', 'infor', $params);
+    get_template_part('template-parts/content/home/home', 'info', $params);
     $cont = ob_get_contents();
     ob_clean();
     ob_end_flush();
     return $cont;
 }
 
-add_shortcode('vc_latest_infor_home', 'vc_latest_infor_home_render');
+add_shortcode('vc_latest_info_home', 'vc_latest_info_home_render');

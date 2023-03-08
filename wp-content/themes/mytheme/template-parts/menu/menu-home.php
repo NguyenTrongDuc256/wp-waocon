@@ -1,10 +1,9 @@
 <?php
-function menunlv($e)
+function menulv($e)
 {
     $menuLocations = get_nav_menu_locations();
     $navbar_items = wp_get_nav_menu_items($menuLocations[$e]);
     $child_items = [];
-
 // pull all child menu items into separate object
     foreach ($navbar_items as $key => $item) {
         if ($item->menu_item_parent) {
@@ -31,7 +30,7 @@ function menunlv($e)
     return $navbar_items;
 }
 
-$menus = menunlv('headerMenuLocation');
+$menus = menulv('headerMenu');
 //echo '<pre>';
 //print_r($menus);
 //echo '</pre>';

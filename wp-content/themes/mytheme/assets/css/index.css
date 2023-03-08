@@ -1,8 +1,4 @@
 @charset "UTF-8";
-@custom-media --sm screen and (min-width: 544px);
-@custom-media --md screen and (min-width: 768px);
-@custom-media --lg screen and (min-width: 992px);
-@custom-media --xl screen and (min-width: 1200px);
 /*
 @mixin is-lg-small() {
   @media screen and (max-width: $breakpoint-tablet) {
@@ -118,6 +114,12 @@ address {
 ul,
 ol {
   list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+figure {
+  margin: 0;
 }
 
 img,
@@ -2015,7 +2017,7 @@ body[data-status=loaded] .js-loading {
 .home-grid-picture__item {
   z-index: 0;
   display: -ms-grid;
-  display: grid;
+  display: grid !important;
   -ms-grid-columns: 1fr 1.6rem 1fr 1.6rem 1fr;
   grid-template-columns: 1fr 1.6rem 1fr 1.6rem 1fr;
   -ms-grid-rows: 1fr 1.6rem 1fr 1.6rem 1fr;
@@ -2277,7 +2279,7 @@ body[data-status=loaded] .js-loading {
 
 @media screen and (min-width: 992px) {
   .home-kv__paragraph {
-    font-size: 2.4rem;
+    font-size: 1.8rem;
   }
 }
 .home-kv__pager {
@@ -3409,7 +3411,6 @@ body[data-status=loaded] .js-loading {
 .case-archive__headline .c-vertical-text {
   text-align: right;
   transform-origin: center center;
-  -ms-writing-mode: horizontal-tb;
   writing-mode: horizontal-tb;
 }
 
@@ -4198,7 +4199,6 @@ body[data-status=loaded] .js-loading {
   height: 16px;
   -webkit-appearance: radio;
   -moz-appearance: radio;
-  appearance: radio;
 }
 
 @media screen and (max-width: 1024px) {
@@ -6776,6 +6776,55 @@ button.swiper-pagination-bullet {
   .c-logo__img {
     max-width: 155px;
   }
+}
+.banner__home {
+  position: relative;
+}
+.banner__home--content {
+  padding: 0 10%;
+  z-index: 2;
+  position: absolute;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: calc(25% + 4vh);
+  left: auto;
+  right: auto;
+}
+
+.mySwiper {
+  height: 100vh;
+}
+.mySwiper .swiper-button-hide {
+  display: none !important;
+}
+.mySwiper .swiper-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mySwiper .swiper-pagination {
+  position: unset !important;
+  text-align: left;
+}
+.mySwiper .swiper-pagination .swiper-pagination-bullet {
+  width: 0.8rem;
+  height: 0.8rem;
+  margin-right: 6px;
+  border: 1px solid #fafafa;
+  border-radius: 0;
+  background: transparent;
+  opacity: 1;
+}
+@media (max-width: 992px) {
+  .mySwiper .swiper-pagination .swiper-pagination-bullet {
+    width: 0.6rem;
+    height: 0.6rem;
+  }
+}
+.mySwiper .swiper-pagination .swiper-pagination-bullet-active {
+  background: #fafafa;
 }
 
 /*# sourceMappingURL=index.css.map */

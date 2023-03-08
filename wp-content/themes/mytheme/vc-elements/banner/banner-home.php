@@ -14,9 +14,15 @@ function banner_home()
             "allowed_container_element" => 'vc_row',
             'params' => array(
                 array(
+                    "type" => "textarea_html",
+                    "heading" => "Content banner",
+                    "param_name" => "content",
+                    "description" => __( "Enter description.", "textdomain" )
+                ),
+                array(
                     'type' => 'param_group',
-                    'param_name' => 'banner',
                     "heading" => "Banner Group",
+                    'param_name' => 'banner',
                     'params' => array(
                         array(
                             "type" => "textfield",
@@ -44,11 +50,13 @@ function banner_home()
 }
 
 
-function vc_latest_banner_home_render($atts, $content = null)
+function vc_latest_banner_home_render($atts, $content)
 {
     $args = array(
+        'content' =>'',
         'banner' => '',
     );
+    $atts['content'] = $content;
 
     $params = shortcode_atts($args, $atts);
     ob_start();
