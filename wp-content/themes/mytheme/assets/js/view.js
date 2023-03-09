@@ -1,3 +1,6 @@
+jQuery(document).ready(function () {
+    AOS.init();
+})
 jQuery(window).on('load scroll', function () {
 
     if (jQuery('#js-header')[0]) {
@@ -22,7 +25,19 @@ jQuery(window).on('load scroll', function () {
     }
 
 });
+
+
 jQuery(window).on('load', function () {
+    jQuery('.js-menu-toggle').on('click tap', function() {
+        var status = jQuery('body').attr('data-menu');
+        if( status == 'active' ) {
+            jQuery('body').attr('data-menu', '');
+            jQuery('body').attr('data-bodyfixed', 'false');
+        } else {
+            jQuery('body').attr('data-menu', 'active');
+            jQuery('body').attr('data-bodyfixed', 'true');
+        }
+    });
     jQuery('body').attr('data-status', 'loaded');
     if (jQuery('.mySwiper')[0]) {
         new Swiper(".mySwiper", {

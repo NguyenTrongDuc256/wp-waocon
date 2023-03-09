@@ -29,7 +29,7 @@ if (isset($args) && $args) { ?>
                 </div>
                 <ul id="js-article-slide" class="sw-article-slide swiper-wrapper">
                     <?php foreach ($values as $key => $item) { ?>
-                        <li class="sw-article-slide__item swiper-slide">
+                        <li class="sw-article-slide__item swiper-slide" data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="<?php echo $key + 3 ?>00">
                             <article class="sw-article-summary">
                                 <a href="<?php echo vc_build_link($item['url'])['url'] ?>"
                                    class="sw-article-summary__thumb">

@@ -19,7 +19,7 @@ if (isset($args) && $args) { ?>
 
     <section id="section_01" class="l-home__section">
         <div class="home-intro">
-            <div class="home-intro__contents">
+            <div class="home-intro__contents" data-aos="zoom-out-right" data-aos-offset="500" data-aos-duration="800">
                 <div class="home-intro__container">
                     <h2 class="home-intro__headline">
                         <span class="c-border-headline">All for customers</span>
@@ -65,7 +65,7 @@ if (isset($args) && $args) { ?>
                     </div><!-- /.home-intro__desc -->
                 </div><!-- /.home-intro__container -->
             </div><!-- /.home-intro__contents -->
-            <div class="home-intro__thumb">
+            <div class="home-intro__thumb" data-aos="zoom-out-left" data-aos-offset="500" data-aos-duration="800">
                 <div id="js-intro-thumb-slide" class="swiper-container sw-thumb-slider">
                     <div class="sw-thumb-btn">
                         <div class="sw-thumb-btn-next"><i class="fas fa-chevron-left"></i></div>

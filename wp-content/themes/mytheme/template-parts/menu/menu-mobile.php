@@ -1,7 +1,44 @@
+<?php
+function menulvmobile($e)
+{
+    $menuLocations = get_nav_menu_locations();
+    $navbar_items = wp_get_nav_menu_items($menuLocations[$e]);
+    $child_items = [];
+// pull all child menu items into separate object
+    foreach ($navbar_items as $key => $item) {
+        if ($item->menu_item_parent) {
+            array_push($child_items, $item);
+            unset($navbar_items[$key]);
+        }
+    }
+
+// push child items into their parent item in the original object
+    foreach ($navbar_items as $item) {
+        foreach ($child_items as $key => $child) {
+            if ($child->menu_item_parent == $item->ID) {
+                if (!$item->child_items) {
+                    $item->child_items = [];
+                }
+
+                array_push($item->child_items, $child);
+                unset($child_items[$key]);
+            }
+        }
+    }
+
+// return navbar object where child items are grouped with parents
+    return $navbar_items;
+}
+
+$menus = menulvmobile('headerMenu');
+$custom_logo_id = get_theme_mod( 'custom_logo' ); // Lấy ID của logo được thiết lập trong Customizer
+$logo_url = wp_get_attachment_image_url( $custom_logo_id , 'full' ); // Lấy URL của logo từ ID
+
+?>
 <div class="header-sp-nav">
     <div class="header-sp-nav__header">
         <div class="header-sp-nav__logo c-logo">
-            <a href="https://pot2020.work/"><img src="https://pot2020.work/wp-content/uploads/2021/10/logo-3.png"
+            <a href="<?php home_url() ?>"><img src="<?= $logo_url ?>"
                                                  alt="" class="c-logo__img"></a>
         </div>
         <div class="header-sp-nav__close js-menu-toggle">
@@ -15,34 +52,12 @@
 
         <nav class="header-sp-nav__wrap">
             <ul class="header-sp-nav__list">
+                <?php foreach ($menus as $navItem) { ?>
                 <li class="header-sp-nav__item">
-                    <a href="https://pot2020.work/about/" class="c-text-link js-location">
-                        ABOUT </a>
+                    <a href="<?= $navItem->url ?>" class="c-text-link js-location">
+                        <?= $navItem->title ?> </a>
                 </li>
-                <li class="header-sp-nav__item">
-                    <a href="https://pot2020.work/service/" class="c-text-link js-location">
-                        SERVICE </a>
-                </li>
-                <li class="header-sp-nav__item">
-                    <a href="https://pot2020.work/case/" class="c-text-link js-location">
-                        CASE </a>
-                </li>
-                <li class="header-sp-nav__item">
-                    <a href="https://pot2020.work/about/#access" class="c-text-link js-location">
-                        ACCESS </a>
-                </li>
-                <li class="header-sp-nav__item">
-                    <a href="https://pot2020.work/blog/" class="c-text-link js-location">
-                        BLOG </a>
-                </li>
-                <li class="header-sp-nav__item">
-                    <a href="https://pot2020.work/faq/" class="c-text-link js-location">
-                        FAQ </a>
-                </li>
-                <li class="header-sp-nav__item">
-                    <a href="https://pot2020.work/contact/" class="c-text-link js-location">
-                        CONTACT </a>
-                </li>
+                <?php } ?>
             </ul>
         </nav><!-- /.header-sp-nav__wrap -->
         <div class="header-sp-sns__wrap">
@@ -52,10 +67,14 @@
                 </li>
 
                 <li class="header-sp-sns__item">
-                    <a href="https://www.instagram.com/kabusikipot/" class="c-sns-link" target="_blank"
+                    <?php $social_network = get_field('social_network', 'option');
+                    if ($social_network) {
+                    ?>
+                    <a href="<?= $social_network ?>" class="c-sns-link" target="_blank"
                        rel="nofollow noopener">
                         <span class="fab fa-instagram" aria-label="Instagram"></span>
                     </a>
+                    <?php } ?>
                 </li>
             </ul><!-- /.header-sp-sns -->
         </div><!-- /.header-sp-sns__wrap -->

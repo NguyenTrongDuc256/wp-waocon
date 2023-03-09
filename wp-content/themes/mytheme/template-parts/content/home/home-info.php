@@ -12,7 +12,7 @@ if (isset($args) && $args) { ?>
                     <div class="home-address__headline">
                         <h2 class="c-border-headline">We welcome you</h2>
                     </div>
-                    <div class="home-address__info">
+                    <div class="home-address__info"  data-aos="zoom-in"  data-aos-offset="300" data-aos-duration="800" >
                         <div class="home-address__details">
                             <dl class="c-information">
                                 <div class="information__row">
@@ -32,7 +32,7 @@ if (isset($args) && $args) { ?>
                 </div><!-- /.home-address__desc-inner -->
             </div><!-- /.home-address__desc-container -->
         </div><!-- /.home-address__desc -->
-        <div class="home-address__map">
+        <div class="home-address__map" data-aos="flip-left" data-aos-offset="500" data-aos-duration="800"  data-aos-delay="300">
             <figure class="c-map">
                 <?php echo $args['content'] ?>
 <!--                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3213.9239445197545!2d138.54356041527697!3d36.338393080046274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x601dcd19acf7bbdf%3A0x5cfd455f17d710db!2z5qCq5byP5Lya56S-UE9U!5e0!3m2!1sja!2sjp!4v1631858117462!5m2!1sja!2sjp" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>-->

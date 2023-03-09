@@ -21,7 +21,7 @@ if (isset($args) && $args) { ?>
                 <div class="home-summary__contents">
                     <ul class="sw-contents-grid">
                         <?php foreach ($values as $key => $item) {?>
-                            <li class="sw-contents-grid__column">
+                            <li class="sw-contents-grid__column" data-aos="fade-up" data-aos-duration="1000"  data-aos-delay="<?php echo $key + 3 ?>00">
                                 <div class="sw-contents-summary">
                                     <div class="sw-contents-summary__card">
                                         <a href="<?php echo vc_build_link($item['url'])['url'] ?>" target="_self" class="sw-card"

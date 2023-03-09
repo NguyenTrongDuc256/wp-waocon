@@ -8,7 +8,7 @@ if (isset($args) && $args) { ?>
     <section id="section_02" class="l-home__section">
         <div class="home-case">
             <div class="home-case__container">
-                <div class="home-case__column">
+                <div class="home-case__column" data-aos="zoom-in-up" data-aos-offset="500" data-aos-duration="800">
                     <div id="js-picture-slider" class="home-grid-picture swiper-container -state-animation">
                         <div class="home-grid-picture__list swiper-wrapper">
                             <?php foreach ($image_ids as $key => $image_id) { ?>
@@ -39,7 +39,7 @@ if (isset($args) && $args) { ?>
                         <span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div>
                     <!-- /.home-grid-picture -->
                 </div><!-- /.home-case__column -->
-                <div class="home-case__column">
+                <div class="home-case__column" data-aos="zoom-in-up" data-aos-offset="500" data-aos-duration="800"  data-aos-delay="300">
                     <div id="js-column-desc" class="sw-desc-slider swiper-container">
                         <div class="sw-desc-slider__list swiper-wrapper">
                             <div class="sw-desc-slider__item swiper-slide">
