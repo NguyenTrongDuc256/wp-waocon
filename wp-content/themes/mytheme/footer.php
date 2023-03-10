@@ -65,6 +65,9 @@
         </div><!-- /.l-footer__copy -->
     </div><!-- /.l-footer__side -->
 </footer>
+<div class="js-pagetop p-pagetop">
+    <button id="js-pagetop-btn" class="p-pagetop-btn" type="button"></button>
+</div>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

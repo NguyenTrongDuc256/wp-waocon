@@ -1,5 +1,32 @@
 jQuery(document).ready(function () {
     AOS.init();
+    jQuery('.js-pagetop').on('click tap', function() {
+        jQuery('body, html').animate({
+            scrollTop: 0
+        }, 300, 'swing');
+    });
+
+    // anchor loading hash location
+    jQuery('a').on('click tap', function(e) {
+        var ref = location.href;
+        var url = jQuery(this).attr('href');
+
+        if( ref.indexOf(url.replace(/#.*$/, '')) != -1 && url.indexOf('#') != -1 ) {
+
+            var speed = 300;
+            var href= url.match(/#.*$/);
+            var target = jQuery(href[0]);
+            var position = target.offset().top - jQuery('#js-header').outerHeight();
+            jQuery('body, html').animate({ scrollTop: position }, speed, 'linear', function(){
+                var nowpos = target.offset().top - jQuery('#js-header').outerHeight();
+                if(nowpos != position){
+                    jQuery('body, html').animate({ scrollTop: nowpos }, 10, 'linear');
+                }
+            });
+            return false;
+        }
+
+    });
 })
 jQuery(window).on('load scroll', function () {
 

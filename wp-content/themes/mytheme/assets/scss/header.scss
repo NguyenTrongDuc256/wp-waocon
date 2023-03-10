@@ -1,0 +1,106 @@
+.l{
+  &-header {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 6rem;
+    -webkit-transition: .3s;
+    transition: .3s;
+    @media screen and (min-width: 992px) {
+        height: 10.4rem;
+    }
+    &.is-fixed {
+      background: rgba(255, 255, 255, 0.8);
+    }
+    &__body {
+      position: relative;
+      z-index: 999;
+      display: -webkit-box;
+      display: flex;
+      height: 6rem;
+      padding: 0 5%;
+      -webkit-box-align: center;
+      align-items: center;
+      -webkit-box-pack: justify;
+      justify-content: space-between;
+      @media screen and (min-width: 992px) {
+          height: 10.4rem;
+      }
+      @media screen and (max-width: 991px) {
+          padding-right: 0;
+      }
+    }
+    &__nav, &__sns{
+      display: none;
+      @media screen and (min-width: 992px) {
+          display: block;
+      }
+    }
+    &__button {
+      height: 100%;
+      @media screen and (min-width: 992px) {
+          display: none;
+      }
+    }
+    &__contact {
+      height: 100%;
+      margin-left: auto;
+      @media screen and (min-width: 992px) {
+          display: none;
+      }
+    }
+    &__tel {
+      height: 100%;
+      margin-left: auto;
+      @media screen and (min-width: 992px) {
+          display: none;
+      }
+    }
+    &__contact + __tel {
+      margin-left: 0;
+    }
+  }
+  &-home{
+    &__section + &__section {
+      margin-top: 5.4rem;
+      @media screen and (min-width: 768px) {
+          margin-top: 8.8rem;
+      }
+      @media screen and (min-width: 992px) {
+          margin-top: 14.4rem;
+      }
+    }
+  }
+  &-main {
+    overflow: hidden;
+  }
+  &-subpage{
+    &__header {
+      display: -webkit-box;
+      display: flex;
+      /* IE11 Bug Fix */
+    }
+    &__nav {
+      position: relative;
+    }
+    &__section {
+      position: relative;
+      &.-background-base-color {
+        background-color: #ecf7ee;
+        .sub-section {
+          padding-bottom: 60px;
+        }
+      }
+      &.-background-theme-color {
+        background-color: #c9e7cd;
+        color: #fafafa;
+      }
+    }
+    &__nav + &__section {
+      margin-top: -91px;
+      padding-top: 11.2rem;
+    }
+  }
+}

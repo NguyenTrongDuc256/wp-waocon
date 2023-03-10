@@ -229,13 +229,17 @@ register_nav_menus(
 
 
 // home
-include_once get_template_directory() . '/vc-elements/banner/banner-home.php';
-include_once get_template_directory() . '/vc-elements/abouts/about-home.php';
-include_once get_template_directory() . '/vc-elements/cases/case-home.php';
-include_once get_template_directory() . '/vc-elements/contents/content-home.php';
-include_once get_template_directory() . '/vc-elements/blogs/blog-home.php';
-include_once get_template_directory() . '/vc-elements/information/info-home.php';
-include_once get_template_directory() . '/vc-elements/contacts/contact-home.php';
+include_once get_template_directory() . '/custom-elements/homes/home-banner.php';
+include_once get_template_directory() . '/custom-elements/homes/home-about.php';
+include_once get_template_directory() . '/custom-elements/homes/home-case.php';
+include_once get_template_directory() . '/custom-elements/homes/home-content.php';
+include_once get_template_directory() . '/custom-elements/homes/home-blog.php';
+include_once get_template_directory() . '/custom-elements/homes/home-info.php';
+include_once get_template_directory() . '/custom-elements/homes/home-contact.php';
+
+//ABOUT
+include_once get_template_directory() . '/custom-elements/abouts/about-header.php';
+include_once get_template_directory() . '/custom-elements/abouts/about-section1.php';
 
 //Tajo ra thêm setting nhập dữ liệu
 if (function_exists('acf_add_options_page')) {
