@@ -226,7 +226,8 @@ register_nav_menus(
     )
 
 );
-
+// breadcrumbs
+include_once get_template_directory() . '/template-parts/breadcrumbs.php';
 
 // home
 include_once get_template_directory() . '/custom-elements/homes/home-banner.php';
@@ -240,6 +241,10 @@ include_once get_template_directory() . '/custom-elements/homes/home-contact.php
 //ABOUT
 include_once get_template_directory() . '/custom-elements/abouts/about-header.php';
 include_once get_template_directory() . '/custom-elements/abouts/about-section1.php';
+include_once get_template_directory() . '/custom-elements/abouts/about-section2.php';
+include_once get_template_directory() . '/custom-elements/abouts/about-section3.php';
+include_once get_template_directory() . '/custom-elements/abouts/about-section4.php';
+include_once get_template_directory() . '/custom-elements/abouts/about-access.php';
 
 //Tajo ra thêm setting nhập dữ liệu
 if (function_exists('acf_add_options_page')) {

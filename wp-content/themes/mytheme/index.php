@@ -14,21 +14,12 @@
 
 ?>
 
-	<main id="primary" class="site-main">
-
 <?php
 get_header();
 while(have_posts()) :
 
     the_post();
     the_content();
-
-
+//    custom_breadcrumbs();
 endwhile;
 get_footer();
-?>
-
-	</main><!-- #main -->
-
-<?php
-

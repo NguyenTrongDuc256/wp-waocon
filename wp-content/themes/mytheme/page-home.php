@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: WaoconWeb Home
+ * Template Name: Waocon HomePage
  */
 ?>
 <?php
@@ -10,6 +10,6 @@ while(have_posts()) :
 
     the_post();
 the_content();
-
+//    custom_breadcrumbs();
 endwhile;
 get_footer();

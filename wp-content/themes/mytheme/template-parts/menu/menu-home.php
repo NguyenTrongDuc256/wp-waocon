@@ -38,8 +38,8 @@ $menus = menulv('headerMenu');
 <nav class="l-header__nav">
     <ul class="header-nav">
         <?php foreach ($menus as $navItem) { ?>
-        <li class="header-nav__item gn-about">
-            <a href="<?= $navItem->url ?>" class="c-text-link js-location <?= $navItem->title ?>">
+        <li class="header-nav__item">
+            <a href="<?= $navItem->url ?>" class="c-text-link js-location <?= get_permalink()==$navItem->url ? "is-current" : "" ?>">
                 <?= $navItem->title ?> </a>
         </li>
         <?php } ?>

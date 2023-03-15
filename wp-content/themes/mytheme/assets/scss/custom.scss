@@ -78,3 +78,45 @@
     }
   }
 }
+.section{
+  &__about{
+    &--1{
+      background-size: cover;
+      background-position: 50% 100%;
+      background-color: #c9e7cd;
+      color: #fafafa;
+      margin-top: -91px;
+      padding-top: 11.2rem;
+      position: relative;
+    }
+    &--contents{
+      padding: 10.4rem 10%;
+    }
+    &--detail{
+      margin-top: 4.8rem;
+    }
+    &--2 &--contents{
+      position: relative;
+    }
+  }
+}
+.card{
+  &__box{
+    margin: 0 -15%;
+    &--left{
+      flex-basis: 30%;
+    }
+    @media (max-width: 1024px) {
+      flex-direction: column;
+      &--left{
+        max-width: 600px;
+        margin: auto;
+        padding: 0 10% 5%;
+      }
+    }
+  }
+
+}
+.c-breadcrumbs-link{
+  text-transform: uppercase;
+}

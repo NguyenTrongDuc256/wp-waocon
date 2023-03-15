@@ -1,0 +1,25 @@
+$Black: #050505;
+$GreenWhite: #DDEDDF;
+$Alabaster: #FAFAFA;
+$OffGreen: #ECF7EE;
+
+$pages: $Black,
+$GreenWhite,
+$Alabaster,
+$OffGreen
+;
+
+
+@each $item in $pages {
+  .text-color-#{ index($pages, $item)} {
+    color: $item;
+  }
+}
+@each $item in $pages {
+  .bg-color-#{ index($pages, $item)} {
+    background: $item;
+  }
+}
+.hideAction{
+  display: none;
+}

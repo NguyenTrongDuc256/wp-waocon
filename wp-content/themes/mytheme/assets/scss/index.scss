@@ -1,4 +1,5 @@
 @import "reset.scss";
+@import "color.scss";
 @import "footer.scss";
 @import "header.scss";
 
@@ -296,9 +297,9 @@ c-pagination
 
 .c-pager-btn {
   display: block;
-  border: 1px solid #050505;
+  border: 1px solid $Black;
   background: #fafafa;
-  color: #050505;
+  color: $Black;
 }
 
 .c-pager-btn.is-prev {
@@ -307,11 +308,11 @@ c-pagination
 }
 
 .c-pager-btn::before {
-  background: #050505;
+  background: $Black;
 }
 
 .c-pager-btn.is-current {
-  background: #050505;
+  background: $Black;
   color: #fafafa;
 }
 
@@ -347,8 +348,8 @@ c-pagination
   width: 20px;
   height: 20px;
   margin-top: 0;
-  border-top: 2px solid #050505;
-  border-right: 2px solid #050505;
+  border-top: 2px solid $Black;
+  border-right: 2px solid $Black;
   border-bottom: none;
   background: none;
   content: '';
@@ -922,7 +923,7 @@ body[data-status="loaded"] .js-loading {
   position: relative;
   width: 42px;
   height: 42px;
-  border: 1px solid #050505;
+  border: 1px solid $Black;
 }
 
 @media screen and (max-width: 1024px) {
@@ -1250,7 +1251,7 @@ body[data-status="loaded"] .js-loading {
   width: 2rem;
   height: .4rem;
   border-radius: 2px;
-  background: #050505;
+  background: $Black;
   -webkit-transition: background .5s, opacity .5s, -webkit-transform .5s;
   transition: background .5s, opacity .5s, -webkit-transform .5s;
   transition: background .5s, transform .5s, opacity .5s;
@@ -1274,7 +1275,7 @@ body[data-status="loaded"] .js-loading {
   width: .4rem;
   height: .4rem;
   border-radius: 50%;
-  background: #050505;
+  background: $Black;
   content: '';
 }
 
@@ -1286,7 +1287,7 @@ body[data-status="loaded"] .js-loading {
 }
 
 .header-nav__item {
-  color: #050505;
+  color: $Black;
 }
 
 .header-nav__item .c-text-link {
@@ -1309,7 +1310,7 @@ body[data-status="loaded"] .js-loading {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #050505;
+  background: $Black;
   content: "";
   opacity: 0;
   -webkit-transition: .3s;
@@ -2621,7 +2622,7 @@ body[data-status="loaded"] .js-loading {
 }
 
 .header-sns__item {
-  color: #050505;
+  color: $Black;
 }
 
 .header-sns__item:not(:first-child) {
@@ -2844,7 +2845,7 @@ body[data-status="loaded"] .js-loading {
 .c-article-post-date::before {
   padding-right: 1rem;
   font-weight: bold;
-  color: #050505;
+  color: $Black;
   content: "date";
 }
 
@@ -3069,7 +3070,7 @@ body[data-status="loaded"] .js-loading {
 .p-post .wp-block-categories a:not([class]),
 .p-post .wp-block-latest-posts a:not([class]),
 .p-post .wp-block-rss__item a:not([class]) {
-  color: #ddeddf;
+  color: $GreenWhite;
 }
 
 .p-post .addtoany_shortcode {
@@ -4219,8 +4220,8 @@ body[data-status="loaded"] .js-loading {
   right: 1.6rem;
   width: .8rem;
   height: .8rem;
-  border-right: 1px solid #050505;
-  border-bottom: 1px solid #050505;
+  border-right: 1px solid $Black;
+  border-bottom: 1px solid $Black;
   content: "";
   -webkit-transition: .3s;
   transition: .3s;
@@ -5222,7 +5223,7 @@ body[data-menu="active"] .header-sp-nav {
   left: 0;
   width: 90%;
   padding: 8rem 10%;
-  background-color: #ddeddf;
+  background-color: $GreenWhite;
   color: #000000;
 }
 
@@ -5356,7 +5357,7 @@ body[data-menu="active"] .header-sp-nav {
   display: inline-block;
   width: 100%;
   height: 60%;
-  background-color: #ddeddf;
+  background-color: $GreenWhite;
   content: '';
 }
 
