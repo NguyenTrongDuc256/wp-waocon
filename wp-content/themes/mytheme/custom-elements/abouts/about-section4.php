@@ -1,0 +1,71 @@
+<?php
+
+add_action('vc_before_init', 'about_section3');
+// if(!function_exists('')){
+
+// }
+function about_section3()
+{
+    vc_map(
+        array(
+            "name" => "About section 3",
+            "base" => "vc_latest_about_section3",
+            "category" => 'Content',
+            "allowed_container_element" => 'vc_row',
+            'params' => array(
+                array(
+                    "type" => "textfield",
+                    "heading" => "Heading 1 About EN",
+                    "param_name" => "heading_1_en",
+                ),
+                array(
+                    "type" => "textfield",
+                    "heading" => "Heading 1 About JPN",
+                    "param_name" => "heading_1_jpn",
+
+                ),
+                array(
+                    "type" => "textfield",
+                    "heading" => "Heading 2",
+                    "param_name" => "heading_2",
+
+                ),
+                array(
+                    "type" => "textarea",
+                    "heading" => __( "Content", "textdomain" ),
+                    "param_name" => "content_about",
+                ),
+                array(
+                    "type" => "attach_image",
+                    "heading" => __( "Image", "textdomain" ),
+                    "param_name" => "content_img",
+                )
+            ),
+
+        )
+    );
+
+}
+
+
+function vc_latest_about_section3_render($atts, $content = null)
+{
+    $args = array(
+        'heading_1_en' => '',
+        'heading_1_jpn' => '',
+        'heading_2' => '',
+        'content_about' => '',
+        'content_img' => '',
+    );
+
+
+    $params = shortcode_atts($args, $atts);
+    ob_start();
+    get_template_part('template-parts/content/abouts/about', 'section3', $params);
+    $cont = ob_get_contents();
+    ob_clean();
+    ob_end_flush();
+    return $cont;
+}
+
+add_shortcode('vc_latest_about_section3', 'vc_latest_about_section3_render');
